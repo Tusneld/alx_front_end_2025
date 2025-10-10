@@ -1,0 +1,79 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Accessible Media: Product Design & Tech (Audio + Video)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to main content</a>
+<header>
+<h1>Accessible Media Examples — Product Design & Tech</h1>
+<p class="meta">Includes multiple source formats, playback controls, transcript, and captions. Topic links: product design, product owner, project management, data science, MERN software engineering.</p>
+</header>
+
+
+<main id="main">
+
+
+<section aria-labelledby="audio-title">
+<h2 id="audio-title">Audio: "Product Design — Quick Primer"</h2>
+<p class="meta">Multiple sources supplied for browser compatibility (MP3 + OGG). Use the controls below or keyboard shortcuts: <span class="kbd">Space</span> play/pause, <span class="kbd">Arrow Up/Down</span> volume.</p>
+
+
+<audio id="audioPlayer" controls preload="metadata" aria-describedby="audio-desc">
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+<source src="https://file-examples-com.github.io/uploads/2017/11/file_example_OOG_1MG.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+<div id="audio-desc" class="meta">Approx. 30 seconds: short narrated introduction to product-design thinking.</div>
+
+
+<div class="controls" role="group" aria-label="Audio controls">
+<label for="audioVolume">Volume</label>
+<input id="audioVolume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Audio volume">
+<button id="audioPlayPause">Play/Pause</button>
+<button id="audioMute">Mute/Unmute</button>
+<a id="downloadMp3" href="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" download>Download MP3</a>
+<a id="downloadOgg" href="https://file-examples-com.github.io/uploads/2017/11/file_example_OOG_1MG.ogg" download>Download OGG</a>
+</div>
+
+
+<h3>Transcript (full)</h3>
+<details open>
+<summary>Show / hide transcript</summary>
+<pre class="transcript" id="transcript" tabindex="0">This short audio introduces product design thinking. It explains that product design balances desirability, feasibility, and viability. A product owner collaborates with designers, engineers, and data teams to prioritize features that solve real user problems. Iteration, prototyping, and user testing are central to the design process. Data science supports decisions by providing user insights and experiments. In MERN stacks, rapid prototypes allow testing front-end experiences while back-end services scale product integrations.</pre>
+</details>
+</section>
+
+
+<section aria-labelledby="video-title">
+<h2 id="video-title">Video: "Design Handoff — Best Practices"</h2>
+<p class="meta">Video includes MP4 + WebM sources and a simple WebVTT caption track.</p>
+
+
+<video id="videoPlayer" controls preload="metadata" width="720" height="405" aria-describedby="video-desc">
+<source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+<source src="https://sample-videos.com/video123/webm/720/big_buck_bunny_720p_1mb.webm" type="video/webm">
+<track id="captionsTrack" label="English captions" kind="subtitles" srclang="en" default src="data:text/vtt;charset=utf-8,WEBVTT%0A%0A00:00:00.000%20-->%2000:00:04.000%0AWelcome%20to%20a%20brief%20guide%20on%20design%20handoffs.%0A%0A00:00:04.000%20-->%2000:00:09.000%0AHandoff%20means%20sharing%20designs%2C%20specs%2C%20and%20assets%20with%20engineering.%0A%0A00:00:09.000%20-->%2000:00:14.000%0AInclude%20prototypes%2C%20annotated%20screens%2C%20and%20accessibility%20notes.%0A%0A00:00:14.000%20-->%2000:00:20.000%0AUse%20versioning%20and%20communication%20channels%20for%20clarity.%0A" />
+</video>
+
+
+<div id="video-desc" class="meta">A short clip demonstrating the essentials of a clean design-to-engineering handoff.</div>
+
+
+<div class="controls" role="group" aria-label="Video controls">
+<button id="videoPlayPause">Play/Pause</button>
+<button id="toggleCaptions">Toggle Captions</button>
+<label for="videoVolume">Volume</label>
+<input id="videoVolume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Video volume">
+</div>
+</section>
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>
